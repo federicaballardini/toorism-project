@@ -1,0 +1,134 @@
+{
+  "version": 8,
+  "name": "Empty Style",
+  "metadata": {"maputnik:renderer": "mlgljs"},
+  "sources": {
+    "u2pgo6u": {
+      "type": "vector",
+      "url": "https://localhost:3000/tilejson.json"
+    },
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://tiles.openfreemap.org/planet"
+    }
+  },
+  "sprite": "",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "rgba(255, 247, 209, 1)"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "paint": {"fill-opacity": 0.8, "fill-color": "rgba(204, 210, 221, 1)"}
+    },
+    {
+      "id": "parks",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 0,
+      "filter": ["in", "class", "park", "grass"],
+      "paint": {
+        "fill-color": "#a3dca6",
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#4a7c3b"
+      }
+    },
+    {
+      "id": "boundaries",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "filter": ["all", ["==", "admin_level", 2]]
+    },
+    {
+      "id": "streets_and_transit-copy",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 0,
+      "filter": ["all"],
+      "paint": {"line-color": "rgba(250, 220, 178, 1)"}
+    },
+    {
+      "id": "transportation",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 0,
+      "filter": ["all", ["in", "class", "rail"]],
+      "paint": {"line-color": "rgba(140, 96, 34, 1)"}
+    },
+    {
+      "id": "minor_cities",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 10,
+      "filter": ["all", ["==", "class", "town"]],
+      "layout": {
+        "text-field": ["get", "name"],
+        "text-size": 10,
+        "text-font": ["Roboto Light"],
+        "text-anchor": "center",
+        "visibility": "none"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-color": "rgba(255, 255, 255, 0)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "main_cities",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 3,
+      "filter": ["==", "class", "city"],
+      "layout": {
+        "text-field": ["get", "name"],
+        "text-size": 14,
+        "text-font": ["Roboto Light"],
+        "text-anchor": "center",
+        "visibility": "none"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-color": "rgba(255, 255, 255, 0)",
+        "text-halo-width": 2
+      }
+    },
+    {
+      "id": "hotels",
+      "type": "circle",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "filter": ["all", ["==", "class", "lodging"]],
+      "paint": {"circle-color": "rgba(163, 71, 50, 1)", "circle-radius": 3}
+    },
+    {
+      "id": "hotels_names",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "filter": ["all", ["==", "class", "lodging"]],
+      "layout": {
+        "text-field": ["get", "name"],
+        "text-size": 10,
+        "text-font": ["Open Sans Light"],
+        "text-anchor": "bottom",
+        "text-justify": "center",
+        "text-offset": [0, -0.5]
+      }
+    }
+  ],
+  "id": "oxj3d4f"
+}

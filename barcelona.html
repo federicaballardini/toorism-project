@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Barcelona</title>
+  
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="barcelona_style.css" />
+    <script src="barcelona_script.js" defer></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+    
+  </head>
+<body class="barcelona_body">
+    <header>
+    <div class="topnav hidden" id="mainTopnav">
+      <a href="index.html" >Home</a>
+      <a href="venice.html">Venice</a>
+      <a href="cdmx.html">Mexico City</a>
+      <a href="barcelona.html" class="active">BARCELONA</a>
+      <a href="javascript:void(0);" class="icon" onclick="menuFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </header>
+
+  <section id="baHeader">
+    <div id="ba-headline-container"></div>
+
+    <div id="ba-heading">
+      <h1 class="ba-block-effect" style="--td: 1.2s">
+        <div class="ba-block-reveal" style="--bc: #e38222; --d: .1s"><strong>Barcelona</strong></div>
+        <div class="ba-block-reveal" style="--bc: #edb258; --d: .5s">Responses to Mass Tourism</div>
+      </h1>
+    </div>
+  </section>
+  
+  <div id="ba-info-body">
+    
+ 
+  <section id="ba-info_text1">
+    <p> Barcelona, a vibrant coastal city in northeastern Spain with a population of 1.7 million, is one of Europe’s top tourist destinations. In 2023, it ranked ninth worldwide in Euromonitor’s City Destinations Ranking, attracting millions of visitors each year. 
+      </p>
+  </section>
+
+  <section class="ba-stats_overview">
+    <h2>2024 Tourism Overview</h2>
+
+    <div class="ba-stats-container">
+      <div class="ba-cardBox">
+        <div class="ba-card">
+          <h2>14.6 million</h2>
+          <div class="ba-content">
+            <h3>Total Tourists in 2024</h3>
+          </div>
+        </div>  
+      </div>
+
+      <div class="ba-cardBox">
+        <div class="ba-card">
+          <h2>11,209</h2>
+          <div class="ba-content">
+            <h3>total accomodations in 2024</h3>
+          </div>
+        </div>  
+      </div>
+
+      <div class="ba-cardBox">
+        <div class="ba-card">
+          <h2>154,843 </h2>
+          <div class="ba-content">
+            <h3>total bed places in 2024</h3>
+          </div>
+        </div>  
+      </div>
+
+      <div class="ba-cardBox">
+        <div class="ba-card">
+          <h2>13.9%</h2>
+          <div class="ba-content">
+            <h3>of the GDP from tourism</h3>
+          </div>
+        </div>  
+      </div>
+
+    </div>
+  </section>
+  
+  <section id="ba-effects">
+    <h2>For the residents...</h2>
+    <p>
+      ... however, large-scale tourism also brings significant challenges. <br><br>
+      The growing influx of tourists has contributed to rising living costs and exacerbated Barcelona’s ongoing housing crisis. These issues are closely linked to the "touristification" of the inner city, where neighborhoods are increasingly shaped by the needs of visitors rather than those of the people who live there. As a result, many locals are being displaced from central areas.
+      <br><br>
+      According to Cocola-Gant (2023, p. 6), this transformation is evident in several ways: <br>
+      <ul>
+        <li> <strong>Changes in public space: </strong>There are fewer places to sit and relax, while overcrowded streets make it difficult for residents to move around. Public areas are often rented out to bars and cafes, reducing access for everyday use.</li>
+        <li> <strong>Shifts in the retail landscape: </strong>Shops that cater to residents are being replaced by businesses aimed at tourists. As a result, locals are forced to travel to other neighborhoods for basic goods and services.</li>
+        <li> <strong>Noise pollution: </strong>Increased noise—whether from people, nightclubs, parties in short-term rentals, ambulances, cleaning vehicles, or early morning restaurant deliveries—disrupts daily life and pushes residents to move.</li>
+        <li> <strong>Loss of community: </strong>The emotional impact of touristification is profound. Many locals experience a sense of dispossession and a weakening of neighborhood ties.</li>
+    </ul>
+    <br>
+    These transformations became even more noticeable after the COVID-19 pandemic, when, for a time, Barcelona was free from the constant presence of tourists. The contrast highlighted just how much the city had changed
+    </p>
+  </section>
+
+  <section id="ba-map-section">
+    <h2>The main areas tourists frequent</h2>
+    <div id="ba-map"></div>
+  </section>
+
+  <section class="ba-responses">
+    <h2>The city is responding</h2>
+    <p>
+      Locals have taken to the streets to protest these changes, and in recent years, Barcelona has introduced measures to address the high number of tourists. 
+      In its 2024 report on government measures for tourism management, the city outlines 12 areas of focus, including the <strong> “Management of urban spaces,”</strong> 
+      which pertains to areas with high tourist traffic. Measures under this category include increasing and reinforcing the number of civic agents and urban police, 
+      as well as launching civil awareness campaigns aimed at visitors. 
+      Other key areas include <strong>“Taxation and funding”</strong>,  <strong>“Internal mobility”</strong>,   and <strong>“Accommodation”</strong> —the latter addressing the regulation of tourist flats, 
+      with licenses for 10,000 such flats set not to be renewed after 2028. Additional areas of focus concern safety, resilience, coexistence, digitalization, and sustainability. 
+      <br><br>
+      For more detailed information, refer to <a href="https://ajuntament.barcelona.cat/turisme/en/tourism-barcelona/lines-action">Barcelona’s official tourism information page</a>.
+    </p>
+  </section>
+  
+  </div>
+
+  <footer>
+    Sources
+    <br>
+    All information sourced from <a href="https://ajuntament.barcelona.cat/ca/">Ajuntament de Barcelona</a>.
+      <br><br>
+      Created by Federica Ballardini, Lilly Tockner, Pedro Bonilla Artigas and Tim Pauly for the courses Web Mapping and Multimedia Cartography in TUW, M.Sc. Cartography.
+  </footer>
+</body>
+
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toorism</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./script_ttdi.js" defer></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="./script_visa.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="topnav hidden" id="mainTopnav">
+        <a href="#page-1" class="active">Home</a>
+        <a href="venice.html">Venice</a>
+        <a href="cdmx.html">Mexico City</a>
+        <a href="barcelona.html">Barcelona</a>
+        <a href="javascript:void(0);" class="icon" onclick="menuFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </header>
+
+    <button onclick="topFunction()" id="tpBtn" title="Go to top">↑</button>
+
+    <div class="scrollytelling-pages">
+      <div class="scroll-page" id="page-1">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          "
+        >
+          <header>
+            <h1>
+              <span class="title-part left" style="color: #fc4619">Too</span
+              ><span class="title-part right" style="color: black">rism</span>
+            </h1>
+          </header>
+        </div>
+      </div>
+      <div class="scroll-page" id="page-2">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+          "
+        >
+          <p>
+            Every year, over 1.4 billion people travel abroad – more than ever
+            before in human history. And tourism is often seen as a source of
+            cultural exchange, economic opportunity, relaxation.
+            <br />
+            However, in recent years the new phenomenon of "overtourism" has
+            appeared, symbolised by overcrowded streets and the proliferation of
+            AirBnBs.
+            <br />
+            More generally, we have started to ask ourselves: what if tourism
+            meant more than just sunny beaches and holidays? What effects does
+            it have on the locals? And most importantly, who gets to be a
+            tourist and who doesn't?
+            <br />
+            <br />
+          </p>
+        </div>
+      </div>
+      <div class="scroll-page" id="page-3">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          "
+        >
+          <h2>What are the world's most touristic countries?</h2>
+          <div id="ttdiMap"></div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 70%;
+            "
+          >
+            <p>
+              The Travel and Tourism Development Index (TTDI) measures how well
+              a country enables sustainable and resilient travel and tourism
+              through factors like infrastructure, environment, and policy.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-page" id="page-4">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+          "
+        >
+          <div class="visaHeader">
+            <h2>Are we all tourist equally?</h2>
+            <h3 id="visaInstruction">
+              Click on any country to see its visa access
+            </h3>
+            <div class="visaControls">
+              <button id="oneToAll" class="active">
+                Where can I travel to?
+              </button>
+              <button id="AllToOne">Who can travel to here?</button>
+            </div>
+          </div>
+
+          <div class="visaMain">
+            <svg class="visaMap" id="visamap1" width="960" height="600">
+              <g class="visaMapRoot"></g>
+            </svg>
+            <div class="visa-legend-container">
+              <h3>Legend</h3>
+              <div class="visa-legend"></div>
+            </div>
+          </div>
+
+          <div id="visa-tooltip"></div>
+        </div>
+      </div>
+      <div class="scroll-page" id="page-5">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+          "
+        >
+          <div class="case-study-nav">
+            <h3>Explore our case studies</h3>
+            <div class="map-cards">
+              <div class="map-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img
+                      src="https://cdn.glitch.global/ede1eb72-d2e0-4c4c-9209-3036570f03ac/venice.png?v=1750069637614"
+                      alt="Venice Map"
+                    />
+                    <div class="card-title">Venice</div>
+                  </div>
+                  <div class="card-back">
+                    <h3>Venice</h3>
+                    <p>
+                      How is mass tourism changing the local environment of the
+                      lagoon city?
+                    </p>
+                    <a href="venice.html">Go to case study</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="map-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img
+                      src="https://cdn.glitch.global/ede1eb72-d2e0-4c4c-9209-3036570f03ac/cdmx-streets.png?v=1750081614251"
+                      alt="Mexico City Map"
+                    />
+                    <div class="card-title">Mexico City</div>
+                  </div>
+                  <div class="card-back">
+                    <h3>Mexico City</h3>
+                    <p>
+                      How does tourism and gentrification intersect in Mexico
+                      City?
+                    </p>
+                    <a href="cdmx.html">Go to case study</a>
+                  </div>
+                </div>
+              </div>
+              <div class="map-card">
+                <div class="card-inner">
+                  <div class="card-front">
+                    <img
+                      src="https://cdn.glitch.global/ede1eb72-d2e0-4c4c-9209-3036570f03ac/barcelona_inset.png?v=1750081486571"
+                      alt="Barcelona Map"
+                    />
+                    <div class="card-title">Barcelona</div>
+                  </div>
+                  <div class="card-back">
+                    <h3>Barcelona</h3>
+                    <p>How are locals responding to overtouristification?</p>
+                    <a href="barcelona.html">Go to case study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+
+    <footer>
+      Sources:
+      <br>Information related to tourism and the TTDI was obtained from <a href="https://www.unwto.org/tourism-statistics/tourism-statistics-database">UN Tourism</a> and from the <a href="https://data360.worldbank.org/en/dataset/WEF_TTDI">World Bank</a>.
+      <br>Information related to the visa map was obtained from <a href="https://www.passportindex.org">Passport Index</a> and the data was downloded from the following <a href="https://github.com/ilyankou/passport-index-dataset/tree/master">repository</a>.
+      <br>
+      <br>
+      Created by Federica Ballardini, Lilly Tockner, Pedro Bonilla Artigas and
+      Tim Pauly for the courses Web Mapping and Multimedia Cartography in TUW,
+      M.Sc. Cartography.
+    </footer>
+  </body>
+</html>
